@@ -11,12 +11,6 @@ public class MaximumProductSubArray {
         int min = arr[0];
 
         for(int i=1; i< arr.length; i++){
-            //handling a case where arr[i] = 0
-            if(arr[i] == 0) {
-                max = 0;
-                min = 0;
-            }
-
             int temp = max;
             max = max(arr[i], max * arr[i], min * arr[i]);
             min = min(arr[i], temp * arr[i], min * arr[i]);
